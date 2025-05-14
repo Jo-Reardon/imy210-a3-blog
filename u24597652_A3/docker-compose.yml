@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  strapi:
+    build: ./strapi-app
+    container_name: imy210-strapi
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./strapi-app:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+
+  nuxt:
+    build: ./nuxt-app
+    container_name: imy210-nuxt
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./nuxt-app:/app
+      - /app/node_modules
+    depends_on:
+      - strapi
+    environment:
+      STRAPI_URL: http://strapi:1337

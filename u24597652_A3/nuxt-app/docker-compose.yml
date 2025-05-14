@@ -1,0 +1,18 @@
+# version: '3.8'
+
+# services:
+#   nuxt:
+#     build: ./nuxt-app
+#     ports:
+#       - "3000:3000"
+#     volumes:
+#       - ./nuxt-app:/app
+#     depends_on:
+#       - strapi
+
+#   strapi:
+#     build: ./strapi-app
+#     ports:
+#       - "1337:1337"
+#     volumes:
+#       - ./strapi-app:/app
